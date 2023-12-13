@@ -14,6 +14,7 @@ view: sales_territory {
     sql: ${TABLE}.Name ;;
   }
   dimension: territory_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.TerritoryID ;;
   }

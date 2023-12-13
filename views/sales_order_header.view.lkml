@@ -26,7 +26,7 @@ view: sales_order_header {
     type: number
     sql: ${TABLE}.OnlineOrderFlag ;;
   }
-  dimension_group: order {
+  dimension_group: order_date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no

@@ -19,6 +19,7 @@ view: sales_order_detail {
     sql: ${TABLE}.ProductID ;;
   }
   dimension: sales_order_detail_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.SalesOrderDetailID ;;
   }
