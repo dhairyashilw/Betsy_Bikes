@@ -72,6 +72,7 @@ view: sales_order_header {
     ELSE ${TABLE}.TerritoryID
   END ;;
   }
+
   measure: count {
     type: count
     drill_fields: [customer.customer_id]

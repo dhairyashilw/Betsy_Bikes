@@ -10,14 +10,14 @@ view: sales_territory_history {
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.EndDate ;;
+    sql: COALESCE(${TABLE}.EndDate,(SELECT MAX(OrderDate) FROM `Betsy_dataset.SalesOrderHeader`)) ;;
   }
   dimension_group: start_date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: FORMAT_DATE('%Y-%d-%m',${TABLE}.StartDate) ;;
+    sql: DATE(FORMAT_DATE('%Y-%d-%m',${TABLE}.StartDate)) ;;
   }
   dimension: territory_id {
     type: number
