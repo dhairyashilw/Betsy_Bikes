@@ -37,4 +37,5 @@ explore: sales_order_header {
     relationship: many_to_one
     sql_on: ${sales_territory_history.business_entity_id} = ${person.business_entity_id} ;;
   }
+  fields: [person.first_name,sales_order_detail.total_sales,quota.data,order_date_quarter]
 }
