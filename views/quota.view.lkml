@@ -13,8 +13,8 @@ view: quota {
     sql: ${TABLE}.QuotaDate ;;
   }
   dimension: sales_person_id {
-    type: string
-    sql: ${TABLE}.SalesPerson_ID ;;
+    type: number
+    sql: CASE WHEN ${TABLE}.SalesPerson_ID = 'Website' THEN 285 ELSE ${TABLE}.SalesPerson_ID END;;
   }
   measure: quotas {
     type: list
