@@ -16,4 +16,8 @@ view: quota {
     type: number
     sql: CASE WHEN ${TABLE}.SalesPerson_ID = 'Website' THEN 285 ELSE CAST(${TABLE}.SalesPerson_ID AS INT) END ;;
   }
+  measure: quotas {
+    type: list
+    list_field: data
+    }
 }
