@@ -2,8 +2,8 @@ view: sales_territory_history {
   sql_table_name: `Betsy_dataset.SalesTerritoryHistory` ;;
 
   dimension: business_entity_id {
-    type: string
-    sql: CAST(${TABLE}.BusinessEntityID AS STRING);;
+    type: number
+    sql: ${TABLE}.BusinessEntityID;;
   }
   dimension_group: end_date {
     type: time

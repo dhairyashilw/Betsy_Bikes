@@ -13,11 +13,11 @@ view: quota {
     sql: ${TABLE}.QuotaDate ;;
   }
   dimension: sales_person_id {
-    type: string
-    sql: CASE
+    type: number
+    sql: CAST((CASE
     WHEN ${TABLE}.SalesPerson_ID = 'Website' THEN '285'
     ELSE ${TABLE}.SalesPerson_ID
-    END;;
+    END) AS INT);;
   }
   dimension: new_sales_person_id {
     type: string
