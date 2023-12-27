@@ -33,6 +33,7 @@ explore: sales_order_header {
           AND ${sales_order_header.order_date_quarter} = ${quota.quota_quarter};;
     sql_where: ${sales_territory_history.start_date_date} <= ${quota.quota_date}
           AND ${quota.quota_date} <= ${sales_territory_history.end_date_date};;
+    fields: [quota.data,quota.quotas]
   }
   join: person {
     type: left_outer

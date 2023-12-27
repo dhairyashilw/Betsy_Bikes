@@ -25,5 +25,6 @@ view: quota {
   }
   measure: quotas {
     type: list
-    list_field: data }
+    list_field: data
+    }
 }
