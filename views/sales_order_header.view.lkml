@@ -33,6 +33,10 @@ view: sales_order_header {
     datatype: date
     sql: ${TABLE}.OrderDate ;;
   }
+  dimension: order_datesss {
+    type:  date
+    sql: ${TABLE}.OrderDate ;;
+  }
   dimension: purchase_order_number {
     type: string
     sql: ${TABLE}.PurchaseOrderNumber ;;
@@ -72,7 +76,10 @@ view: sales_order_header {
     ELSE ${TABLE}.TerritoryID
   END ;;
   }
-
+  dimension: max_order_date {
+    type: date
+    sql: (SELECT MAX(OrderDate) FROM `Betsy_dataset.SalesOrderHeader`) ;;
+  }
   measure: count {
     type: count
     drill_fields: [customer.customer_id]

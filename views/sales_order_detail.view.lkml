@@ -47,6 +47,11 @@ view: sales_order_detail {
     type: count
     drill_fields: [product.product_id, product.name]
   }
+  dimension: sales{
+    type: number
+    sql: ${order_qty}*${unit_price}*(1-${unit_price_discount}) ;;
+    description: "Sales"
+  }
   measure:  total_sales{
     type:  sum
     sql: ${order_qty}*${unit_price}*(1-${unit_price_discount}) ;;

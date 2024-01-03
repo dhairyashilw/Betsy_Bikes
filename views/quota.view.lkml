@@ -26,5 +26,9 @@ view: quota {
   measure: quotas {
     type: list
     list_field: data
-    }
+  }
+  measure: quotass {
+    type: number
+    sql:  ${TABLE}.Data;;
+  }
 }
